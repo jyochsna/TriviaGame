@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    background:url("../images/background.jpg")
+}
+.container{
+    background-color: darkorange;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+h1{
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bolder;
+}
