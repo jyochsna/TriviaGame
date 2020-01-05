@@ -1,3 +1,22 @@
+var number = 30;
+var intervalId;
+$("#start").on("click", run);
+function run(){
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+    
+}
+function decrement(){
+    number--;
+    $("#show-number").text("Your Total Time Remaining: "  + number);
+    if (number === 0){
+        stop();
+        alert("Time Up!");
+    }
+}
+    
+ run();
+
 
 var questionBanks = [
     { 
@@ -49,3 +68,4 @@ for(var i = 0; i<questionBanks.length; i++){
 }
 builQuiz(questionBanks);
 $("#quiz").append(output);
+run();
