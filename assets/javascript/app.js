@@ -126,7 +126,7 @@ $("#quiz").append(output);
 var correctChoices = 0;
 var wrongChoices = 0;
 var userGuess;
-var unAnswer = "";
+var noAnswer = 0;
 
 function checkAnswer() {
     const quizContainer = document.getElementById("quiz");
@@ -136,8 +136,14 @@ function checkAnswer() {
         const answerContainer = answerContainers[i];
         const selector = 'input[name=question' + i + ']:checked';
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+        
+        if (userAnswer == null){
+            noAnswer++;
+           
+            
+        } 
 
-        if (userAnswer === questionBanks[i].correctAnswer) {
+        else if (userAnswer === questionBanks[i].correctAnswer) {
             correctChoices++;
         }
         else {
@@ -153,13 +159,16 @@ function checkAnswer() {
     $("#finish").toggle(true);
     $("#correct").toggle(true);
     $("#uncorrect").toggle(true);
+    $("#noanswer").toggle(true);
 
     $("#correct").text("Correct Answers: " + correctChoices);
     $("#uncorrect").text("Incorrect Answers: " + wrongChoices);
+    $("#noanswer").text("Not Answered: " + noAnswer);
 
     // reset for other rounds
     correctChoices = 0;
     wrongChoices = 0;
+    noAnswer = 0;
     number = timeoutInSeconds;
 }
 
