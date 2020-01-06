@@ -1,11 +1,11 @@
-var timeoutInSeconds = 10;
+var timeoutInSeconds = 120;
 var number = timeoutInSeconds;
 var intervalId;
 
 $("#start").on("click", run);
 
 function run() {
-    $("#start").toggle(true);
+    $("#start").toggle(false);
     $("#show-number").toggle(true);
     $("#quiz").toggle(true);
     $("#done").toggle(true);
@@ -53,7 +53,48 @@ var questionBanks = [
         correctAnswer: "b"
 
     },
+    {
+        question: "How many balls are there in a snooker triangle? ",
+        answers: {
+            a: 10,
+            b: 32,
+            c: 15,
+            d: 16
+        },
+        correctAnswer: "c"
+     
+    },
+    {
+        question: "How many players play on each hockey team? ",
+        answers:{
+            a: "six",
+            b: "ten",
+            c: "five",
+            d: "eight"
+        },
+        correctAnswer: "a"
+    },
 
+    {
+        question: "In which country was the game Chinese checkers invented? ",
+        answers:{
+            a: "Japan",
+            b: "Germany",
+            c: "China",
+            d: "London"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "In 1964, which game was added to the Tokyo game as a medal sport? ",
+        answers:{
+            a: "Basketball",
+            b: "baseball",
+            c: "volleyball",
+            d: "football"
+        },
+        correctAnswer: "c"
+    }
 ];
 var output = [];
 function builQuiz(questionBanks) {

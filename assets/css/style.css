@@ -3,6 +3,11 @@
 }
 body {
     background:url("../images/background.jpg")
+    
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
 }
 .container{
     background-color: darkorange;
