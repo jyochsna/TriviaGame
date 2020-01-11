@@ -3,7 +3,7 @@ var number = timeoutInSeconds;
 var intervalId;
 
 $("#start").on("click", run);
-
+$("#playagain").on("click", run);
 function run() {
     $("#start").toggle(false);
     $("#show-number").toggle(true);
@@ -13,6 +13,9 @@ function run() {
     $("#finish").toggle(false);
     $("#correct").toggle(false);
     $("#uncorrect").toggle(false);
+    $("#playagain").toggle(false);
+    $("#noanswer").toggle(false);
+    $("#playagain").toggle(false);
 
     number = timeoutInSeconds;
 
@@ -25,7 +28,7 @@ function decrement() {
     $("#show-number").text("Your Total Time Remaining: " + number + " sec");
     if (number === 0) {
         stop();
-        alert("Time Up!");
+        alert("Oops! Time Up!");
         checkAnswer();
     }
 }
@@ -150,8 +153,8 @@ function checkAnswer() {
             wrongChoices++;
         }
     }
-
-    $("#start").toggle(true);
+  
+    $("#start").toggle(false);
     $("#show-number").toggle(false);
     $("#quiz").toggle(false);
     $("#done").toggle(false);
@@ -160,6 +163,8 @@ function checkAnswer() {
     $("#correct").toggle(true);
     $("#uncorrect").toggle(true);
     $("#noanswer").toggle(true);
+    $("#playagain").toggle(true);
+    
 
     $("#correct").text("Correct Answers: " + correctChoices);
     $("#uncorrect").text("Incorrect Answers: " + wrongChoices);
@@ -182,4 +187,5 @@ $(document).ready(function () {
     $("#uncorrect").toggle(false);
     $("#noanswer").toggle(false);
     $("#done").toggle(false);
+    $("#playagain").toggle(false);
 })

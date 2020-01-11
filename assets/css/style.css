@@ -20,3 +20,19 @@ h1{
     font-weight: bolder;
     margin-bottom: 20px;
 }
+#playagain{
+    margin-bottom: 10px;
+}
+button{
+    padding: 10px;
+}
+button:hover{
+    background-color: lightskyblue;
+}
+#show-number{
+    margin-bottom: 10px;
+    padding:10px;
+    color:maroon;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
